@@ -14,12 +14,12 @@ export const Footer = () => {
                 <div className="absolute -top-1 -right-1 w-3 h-3 bg-yellow-400 rounded-full animate-pulse"></div>
               </div>
               <h2 className="text-2xl sm:text-3xl font-bold bg-gradient-to-r from-pink-400 to-purple-400 bg-clip-text text-transparent">
-                DoodleDash
+                DoodleDashh
               </h2>
             </div>
             <p className="mb-6 text-center sm:text-left max-w-md mx-auto sm:mx-0 leading-relaxed">
               Unleash your creativity with the most intuitive drawing app. From quick sketches to masterpieces, 
-              DoodleDash makes every stroke count.
+              DoodleDashh makes every stroke count.
             </p>
             <div className="flex justify-center sm:justify-start space-x-6">
               <a href="#" className="text-gray-500 hover:text-pink-400 transition-colors duration-300 transform hover:scale-110" aria-label="Twitter">
@@ -72,7 +72,7 @@ export const Footer = () => {
         <div className="max-w-7xl mx-auto px-6 py-4">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <div className="flex items-center space-x-1 mb-2 md:mb-0">
-              <span className="text-gray-400">© 2025 DoodleDash. Made with</span>
+              <span className="text-gray-400">© 2025 DoodleDashh. Made with</span>
               <Heart className="h-4 w-4 text-red-400 animate-pulse" />
               <span className="text-gray-400">for creators everywhere.</span>
             </div>

@@ -65,7 +65,7 @@ export const SignUpPage = () => {
         <div className="w-[80%] md:w-[60%] lg:w-[40%]">
             <div className="flex items-center gap-2 hover:cursor-pointer mb-3" onClick={() => navigate("/")}>
                 <RightArrowIcon className="w-4 h-4 fill-[#7b738c] rotate-180"/>
-                <span className="text-[14px] text-[#7b738c] font-normal">Back to DoodleDash</span>
+                <span className="text-[14px] text-[#7b738c] font-normal">Back to DoodleDashh</span>
             </div>
             <Card className="p-6">
                 <CardHeader className="flex flex-col text-center">

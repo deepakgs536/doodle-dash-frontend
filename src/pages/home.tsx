@@ -127,7 +127,7 @@ const features = [
             </div>
             <div className="flex flex-col justify-center items-center py-10 md:py-20">
                 <div className="text-[#24212c] font-bold text-[36px]">
-                    Why Players Love DoodleDash
+                    Why Players Love DoodleDashh
                 </div>
                 <div className="mt-2 w-[52%] text-center text-[#7b738c] font-normal text-[20px]">
                     Experience the most engaging drawing game with features designed for 
