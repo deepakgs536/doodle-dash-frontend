@@ -15,7 +15,7 @@ const JoinRoomPage = () => {
     const accessToken = localStorage.getItem("token");
 
     try {
-      const res = await axios.post(`${import.meta.env.BACKEND_URL}/room/join`,
+      const res = await axios.post(`${import.meta.env.VITE_BACKEND_URL}/room/join`,
       { roomCode },
       {
         headers: {

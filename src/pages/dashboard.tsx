@@ -30,7 +30,7 @@ export const DashboardPage = ({ setToken }: DashboardPageProps) => {
     const fetchUser = async () => {
       try {
         const token = localStorage.getItem("token"); // or from zustand
-        const res = await axios.get(`${import.meta.env.BACKEND_URL}/user`, {
+        const res = await axios.get(`${import.meta.env.VITE_BACKEND_URL}/user`, {
           headers: {
             Authorization: `Bearer ${token}`,
           },

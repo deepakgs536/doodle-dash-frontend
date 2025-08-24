@@ -23,7 +23,7 @@ const CreateRoomPage = () => {
       setIsLoading(true);
 
       const res = await axios.post(
-        `${import.meta.env.BACKEND_URL}/room/create`,
+        `${import.meta.env.VITE_BACKEND_URL}/room/create`,
         {
           roomName,
           difficultyLevel : diff,

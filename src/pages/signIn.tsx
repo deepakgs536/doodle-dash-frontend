@@ -33,7 +33,7 @@ export const SignInPage = ({ setToken }: SignInPageProps) => {
                 return false;
             }
 
-            const response = await axios.post(`${import.meta.env.BACKEND_URL}/signin`, {
+            const response = await axios.post(`${import.meta.env.VITE_BACKEND_URL}/signin`, {
                 email: email.trim(),
                 password: password.trim(),
             });
