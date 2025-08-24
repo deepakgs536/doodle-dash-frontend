@@ -23,7 +23,7 @@ const CreateRoomPage = () => {
       setIsLoading(true);
 
       const res = await axios.post(
-        import.meta.env.BACKEND_URL,
+        `${import.meta.env.BACKEND_URL}/room/create`,
         {
           roomName,
           difficultyLevel : diff,
@@ -44,6 +44,7 @@ const CreateRoomPage = () => {
       // redirect user to room page
       navigate(`/room/${apiRoom}`);
     } catch (err: any) {
+      setIsLoading(false);
       console.error("Error creating room:", err.response?.data || err.message);
     }
   };
