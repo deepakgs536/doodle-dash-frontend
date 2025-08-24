@@ -1,0 +1,36 @@
+    .range-slider {
+    --progress: 50%; /* default */
+    background: linear-gradient(
+        to right,
+        #9333ea 0%,
+        #9333ea var(--progress),
+        #e5e7eb var(--progress),
+        #e5e7eb 100%
+    );
+    }
+
+    .range-slider::-webkit-slider-thumb {
+    appearance: none;
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+    background: #ffffff;
+    cursor: pointer;
+    border: 3px solid #9333ea;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    .range-slider::-moz-range-thumb {
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+    background: #ffffff;
+    cursor: pointer;
+    border: 3px solid #9333ea;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    select option {
+    background: #ffffff;
+    color: #374151;
+    }
