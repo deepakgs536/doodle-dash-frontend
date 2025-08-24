@@ -23,7 +23,7 @@ function App() {
 
   // Private Route wrapper
   const PrivateRoute = ({ children }: { children: JSX.Element }) => {
-    return token ? children : <Navigate to="/signIn" replace />;
+    return token ? children : <Navigate to="/" replace />;
   };
 
   // Public Route wrapper
