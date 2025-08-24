@@ -19,7 +19,7 @@ export const Navbar = () => {
     <div className="flex justify-between items-centerrelative">
       {/* Logo */}
       <div className="text-[20px] md:text-[24px] font-bold bg-gradient-to-r from-purple-500 via-pink-500 to-orange-400 bg-clip-text text-transparent hover:cursor-pointer">
-       <span className="hidden md:inline-block">##</span>## DoodleDash
+       <span className="hidden md:inline-block">##</span> DoodleDash
       </div>
 
       {/* Desktop Menu */}
