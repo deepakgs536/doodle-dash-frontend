@@ -7,7 +7,7 @@ import { showToast } from "./toastComp";
 import { VisibilityIcon, VisibilityOffIcon } from "../../public";
 import ShowResults from "./showResult";
 
-const URL = "http://localhost:5000";
+const URL = import.meta.env.BACKEND_URL;
 
 export const socket = io(URL, {
   withCredentials: true,

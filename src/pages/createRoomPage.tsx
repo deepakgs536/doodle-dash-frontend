@@ -23,7 +23,7 @@ const CreateRoomPage = () => {
       setIsLoading(true);
 
       const res = await axios.post(
-        "https://doodle-app-backend.onrender.com",
+        import.meta.env.BACKEND_URL,
         {
           roomName,
           difficultyLevel : diff,
