@@ -1,8 +1,5 @@
 // store/authStore.ts
 import { create } from "zustand";
-import axios from "axios";
-import { showToast } from "@/components/toastComp";
-import { Navigate, useNavigate } from "react-router";
 
 interface SignInData {
   email: string;
@@ -38,7 +35,7 @@ interface AuthState {
   resetSignUpData: () => void;
 }
 
-export const useAuthStore = create<AuthState>((set, get) => ({
+export const useAuthStore = create<AuthState>((set, _get) => ({
   // initial states
   signInData: { email: "", password: "" },
   signUpData: { username: "", email: "", password: "", confirmPassword: "" },

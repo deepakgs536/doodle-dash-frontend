@@ -1,5 +1,4 @@
 import { IconField } from "./iconField";
-import { cn } from "@heroui/theme"; // optional, for safe class merging
 
 type HighlightMetricsProps = {
   icon?: React.ReactNode;

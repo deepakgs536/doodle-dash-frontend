@@ -5,7 +5,6 @@ import { cn } from "@heroui/theme";
 import { ArtistPaletteIcon, GlobalIcon, GroupIcon, PlayIcon, RewardIcon, RightArrowIcon } from "../../public";
 import { IconField } from "@/components/iconField";
 import { HighlightMetrics } from "@/components/highlightMetrics";
-import { useEffect } from "react";
 import { FeaturesCard } from "@/components/featuresCard";
 import { Footer } from "@/components/footer";
 
