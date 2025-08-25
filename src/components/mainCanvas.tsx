@@ -6,6 +6,7 @@ import { io } from "socket.io-client";
 import { showToast } from "./toastComp";
 import { VisibilityIcon, VisibilityOffIcon } from "../../public";
 import ShowResults from "./showResult";
+import { LoadingOverlay } from "./loadingOverlay";
 
 const URL = import.meta.env.VITE_BACKEND_URL;
 
@@ -90,7 +91,7 @@ const DrawingGameInterface = () => {
   const [isVisible , setIsVisible] = useState<boolean>(false);
   const [showResults, setShowResults] = useState<boolean>(false);
   const [topParticipants, setTopParticipants] = useState([]);
-  // const [isLoading , setIsLoading] = useState<boolean>(true);
+  const [isLoading , setIsLoading] = useState<boolean>(false);
   
   const { roomId } = useParams();
   const userId = localStorage.getItem("_id");
@@ -210,8 +211,10 @@ const clearCanvas = () => {
     if (!roomId || !userId || !username) return;
 
     if (!hasJoined.current) {
+      setIsLoading(true);
       socket.emit("joinRoom", { roomId, userId, username });
       hasJoined.current = true;
+      setIsLoading(false);
     }
 
     socket.on("roomData", (roomData) => {
@@ -320,6 +323,7 @@ const clearCanvas = () => {
 
 
     socket.on("errorMessage", (msg) => {
+      setIsLoading(false);
       if(msg === "Room not found"){
         showToast("error" , msg);
         navigate("/dashboard");
@@ -978,7 +982,7 @@ const clearCanvas = () => {
         topParticipants={topParticipants}
       />
 
-      {/* <LoadingOverlay show={isLoading} /> */}
+      <LoadingOverlay show={isLoading} />
     </div>
   );
 };
