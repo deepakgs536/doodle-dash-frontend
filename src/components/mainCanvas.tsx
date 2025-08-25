@@ -210,20 +210,16 @@ const clearCanvas = () => {
   useEffect(() => {
     if (!roomId || !userId || !username) return;
 
+    setIsLoading(true);
     if (!hasJoined.current) {
-      setIsLoading(true);
       socket.emit("joinRoom", { roomId, userId, username });
       hasJoined.current = true;
-      setIsLoading(false);
     }
 
     socket.on("roomData", (roomData) => {
       setRoom(roomData);
     });
-
-    socket.on("playerJoined", () => {
-      
-    });
+    setIsLoading(false);
 
     socket.on("chatHistory", (history) => {
       if (!history) {
