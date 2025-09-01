@@ -91,7 +91,7 @@ const DrawingGameInterface = () => {
   const [isVisible , setIsVisible] = useState<boolean>(false);
   const [showResults, setShowResults] = useState<boolean>(false);
   const [topParticipants, setTopParticipants] = useState([]);
-  const [isLoading , setIsLoading] = useState<boolean>(false);
+  const [isLoading , setIsLoading] = useState<boolean>(true);
   
   const { roomId } = useParams();
   const userId = localStorage.getItem("_id");
@@ -205,21 +205,24 @@ const clearCanvas = () => {
   socket.emit("drawing", { type: "clear" });
 };
 
+const handleSetRoomData = (roomData : Room) => {
+  setRoom(roomData);
+  setIsLoading(false);
+}
+
   const hasJoined = useRef(false);
 
   useEffect(() => {
     if (!roomId || !userId || !username) return;
 
-    setIsLoading(true);
     if (!hasJoined.current) {
       socket.emit("joinRoom", { roomId, userId, username });
       hasJoined.current = true;
     }
 
     socket.on("roomData", (roomData) => {
-      setRoom(roomData);
+      handleSetRoomData(roomData);
     });
-    setIsLoading(false);
 
     socket.on("chatHistory", (history) => {
       if (!history) {
@@ -354,6 +357,7 @@ const clearCanvas = () => {
 
   // Game control functions
   const handleStartGame = () => {
+    setIsLoading(true);
     if (!isHost) return;
     socket.emit("startGame", { roomId });
   };

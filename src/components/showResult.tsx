@@ -4,9 +4,8 @@ import { Trophy, Medal, Award, Star, Crown } from 'lucide-react';
 // TypeScript interfaces
 interface Participant {
   id: string;
-  name: string;
+  username: string;
   score: number;
-  avatar: string;
   color: string;
 }
 
@@ -90,12 +89,6 @@ const ShowResults: React.FC<ShowResultsProps> = ({
                 
                 {/* Avatar */}
                 <div className="text-center mb-4">
-                  <div className="text-6xl mb-2 relative">
-                    {participant.avatar}
-                    {index === 0 && (
-                      <div className="absolute -top-2 -right-2 text-2xl animate-bounce">✨</div>
-                    )}
-                  </div>
                   <div className={`inline-flex items-center px-3 py-1 rounded-full text-sm font-bold ${
                     index === 0 ? 'bg-yellow-400/20 text-yellow-100' : 'bg-white/20 text-white'
                   }`}>
@@ -106,7 +99,7 @@ const ShowResults: React.FC<ShowResultsProps> = ({
 
                 {/* Name */}
                 <h3 className="text-white font-bold text-xl text-center mb-2">
-                  {participant.name}
+                  {participant?.username}
                 </h3>
 
                 {/* Score */}
@@ -114,7 +107,6 @@ const ShowResults: React.FC<ShowResultsProps> = ({
                   <div className="text-3xl font-bold text-white mb-1">
                     {participant.score.toLocaleString()}
                   </div>
-                  <div className="text-white/80 text-sm">points</div>
                 </div>
 
                 {/* Winner badge */}

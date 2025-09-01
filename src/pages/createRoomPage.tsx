@@ -40,9 +40,6 @@ const CreateRoomPage = () => {
       setIsLoading(false);
 
       const apiRoom = res.data._id;
-
-      console.log("success");
-
       // redirect user to room page
       navigate(`/room/${apiRoom}`);
     } catch (err: any) {
